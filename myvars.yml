@@ -1,0 +1,7 @@
+# uses the following vars_files named "myvars.yml"
+---    
+ commands:
+    - ls
+    - echo $HOME $PWD > myfile.txt
+    - cat myfile.txt
+

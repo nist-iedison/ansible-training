@@ -1,0 +1,15 @@
+ans
+ansible-downloaded-the-secret-file.txt
+beatles-setup.sh
+indy-setup.sh
+mainplay.yml
+max-teardown.sh
+mrepo
+new-key.pem
+new-key.pem.pub
+pexpress-setup.sh
+prompt-playbook03.yml
+prompt-playbook04.yml
+setup.output
+static
+test_copy

@@ -1,0 +1,13 @@
+# define operations for this role
+- name: copy file into the ~/nginx directory
+  copy:
+     src: myfile.txt
+     dest: ~/etc/nginx/
+     force: no
+  
+- name: install or remove package nginx "{{nginx_state}}"
+  package:
+    name: nginx
+    state: "{{nginx_state}}"
+  become: true
+  notify: end_handler

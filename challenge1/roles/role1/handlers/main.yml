@@ -1,0 +1,5 @@
+##calls on a handler if nginx was installed (debug
+
+ - name: end_handler
+   debug:
+     msg: The role handler is called.

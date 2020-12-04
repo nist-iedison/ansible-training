@@ -1,0 +1,39 @@
+#Create a playbook that runs against the planetexpress hosts (excluding farnsworth) that does the following
+
+- name: A challenge playbook
+  hosts: planetexpress
+ 
+  pre_tasks: #to create directory
+  - name: create ~/nginx
+    file:
+      path: ~/nginx
+      state: directory
+    notify: nginx dir made
+
+  tasks:
+  - name: perform ls
+    shell: ls ~
+    register: home_ls
+    tags:
+    - ls
+
+  - name: debug ls
+    debug:
+      msg: Yure home is {{home_ls.stdout}}
+    tags: ls
+
+  roles:
+  - role1
+ 
+  post_tasks: # remove directory
+  - name: remove ~/nginx
+    file:
+      path: ~/nginx
+      state: absent
+
+
+  handlers:
+  - name: nginx dir made
+    debug:
+      msg: The nginx diretory is made.
+

@@ -1,0 +1,83 @@
+
+PLAY [Ansible and RESTful interfaces] *******************************************************
+
+TASK [Quick iss api checkup] ****************************************************************
+ok: [localhost] => {
+    "msg": "Today on the ISS are: [{u'craft': u'ISS', u'name': u'Sergey Ryzhikov'}, {u'craft': u'ISS', u'name': u'Kate Rubins'}, {u'craft': u'ISS', u'name': u'Sergey Kud-Sverchkov'}, {u'craft': u'ISS', u'name': u'Mike Hopkins'}, {u'craft': u'ISS', u'name': u'Victor Glover'}, {u'craft': u'ISS', u'name': u'Shannon Walker'}, {u'craft': u'ISS', u'name': u'Soichi Noguchi'}]"
+}
+
+TASK [Loop through our data and display each dict (name and craft)] *************************
+ok: [localhost] => (item={u'craft': u'ISS', u'name': u'Sergey Ryzhikov'}) => {
+    "msg": "Loop across ISS data: {u'craft': u'ISS', u'name': u'Sergey Ryzhikov'}"
+}
+ok: [localhost] => (item={u'craft': u'ISS', u'name': u'Kate Rubins'}) => {
+    "msg": "Loop across ISS data: {u'craft': u'ISS', u'name': u'Kate Rubins'}"
+}
+ok: [localhost] => (item={u'craft': u'ISS', u'name': u'Sergey Kud-Sverchkov'}) => {
+    "msg": "Loop across ISS data: {u'craft': u'ISS', u'name': u'Sergey Kud-Sverchkov'}"
+}
+ok: [localhost] => (item={u'craft': u'ISS', u'name': u'Mike Hopkins'}) => {
+    "msg": "Loop across ISS data: {u'craft': u'ISS', u'name': u'Mike Hopkins'}"
+}
+ok: [localhost] => (item={u'craft': u'ISS', u'name': u'Victor Glover'}) => {
+    "msg": "Loop across ISS data: {u'craft': u'ISS', u'name': u'Victor Glover'}"
+}
+ok: [localhost] => (item={u'craft': u'ISS', u'name': u'Shannon Walker'}) => {
+    "msg": "Loop across ISS data: {u'craft': u'ISS', u'name': u'Shannon Walker'}"
+}
+ok: [localhost] => (item={u'craft': u'ISS', u'name': u'Soichi Noguchi'}) => {
+    "msg": "Loop across ISS data: {u'craft': u'ISS', u'name': u'Soichi Noguchi'}"
+}
+
+TASK [Loop through our data and display ONLY first and last names] **************************
+ok: [localhost] => (item={u'craft': u'ISS', u'name': u'Sergey Ryzhikov'}) => {
+    "msg": "Astro names are: Sergey Ryzhikov"
+}
+ok: [localhost] => (item={u'craft': u'ISS', u'name': u'Kate Rubins'}) => {
+    "msg": "Astro names are: Kate Rubins"
+}
+ok: [localhost] => (item={u'craft': u'ISS', u'name': u'Sergey Kud-Sverchkov'}) => {
+    "msg": "Astro names are: Sergey Kud-Sverchkov"
+}
+ok: [localhost] => (item={u'craft': u'ISS', u'name': u'Mike Hopkins'}) => {
+    "msg": "Astro names are: Mike Hopkins"
+}
+ok: [localhost] => (item={u'craft': u'ISS', u'name': u'Victor Glover'}) => {
+    "msg": "Astro names are: Victor Glover"
+}
+ok: [localhost] => (item={u'craft': u'ISS', u'name': u'Shannon Walker'}) => {
+    "msg": "Astro names are: Shannon Walker"
+}
+ok: [localhost] => (item={u'craft': u'ISS', u'name': u'Soichi Noguchi'}) => {
+    "msg": "Astro names are: Soichi Noguchi"
+}
+
+TASK [Create a new list with ansible of astro names] ****************************************
+ok: [localhost]
+
+TASK [Only display the first names of the astros] *******************************************
+ok: [localhost] => (item=Sergey Ryzhikov) => {
+    "msg": "Sergey"
+}
+ok: [localhost] => (item=Kate Rubins) => {
+    "msg": "Kate"
+}
+ok: [localhost] => (item=Sergey Kud-Sverchkov) => {
+    "msg": "Sergey"
+}
+ok: [localhost] => (item=Mike Hopkins) => {
+    "msg": "Mike"
+}
+ok: [localhost] => (item=Victor Glover) => {
+    "msg": "Victor"
+}
+ok: [localhost] => (item=Shannon Walker) => {
+    "msg": "Shannon"
+}
+ok: [localhost] => (item=Soichi Noguchi) => {
+    "msg": "Soichi"
+}
+
+PLAY RECAP **********************************************************************************
+localhost                  : ok=5    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
